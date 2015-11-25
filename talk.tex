@@ -2,7 +2,7 @@
 \usepackage[english]{common}
 
 \renewcommand{\maketitle}{%
-  \nocount{
+  \nocount{%
     \frame[plain]{\titlepage}
   }
 }
@@ -22,7 +22,7 @@
     \footnote{\url{http://tom.preston-werner.com/2009/05/19/the-git-parable.html}}
   \item describe how to build yourself -- from scratch --\\
         a \alert{version control system} (VCS)
-  \item i.e. introduce internals of GIT !
+  \item i.e. introduce internals of GIT!
   \item skipped parts: history rewriting and file storage
 \end{itemize}
 \end{frame}
@@ -63,11 +63,11 @@
 
 
 \begin{frame}{Keep copies of modified files}
-\twocolumns{
+\twocolumns{%
   \begin{itemize}
     \item<+-> keep a backup before modifying a file
     \item<+-> and do it again
-    \item<+-> and which versions work together ?
+    \item<+-> and which versions work together?
     \item<+-> \alert{\Large bad bad bad idea}
   \end{itemize}
 }{%
@@ -118,7 +118,7 @@
   }
 
   \onslide<6>{%
-  \begin{block}{what happened ?}
+  \begin{block}{what happened?}
   \begin{itemize}
     \item just made a \alert{branch}
     \item from linear history to \alert{tree}
@@ -177,7 +177,7 @@
 \twocolumns{%
   \vspace{2em}
   \begin{itemize}
-    \item<2-> send a copy of everything to your partner !
+    \item<2-> send a copy of everything to your partner!
     \item<3-> partner adding new snapshots and you too...
     \item<4-> numbering broken when put back together
   \end{itemize}
