@@ -17,23 +17,49 @@
 \maketitle
 
 \begin{frame}{Where it is coming from}
-% git parable text
-% describe buidling a VCS from scratch
-% explain how GIT does its stuff internally
-% I skip the part about rewriting history and file storage
+\begin{itemize}
+  \item originate from Tom Preston-Werner's article
+    \footnote{\url{http://tom.preston-werner.com/2009/05/19/the-git-parable.html}}
+  \item describe how to build yourself -- from scratch --\\
+        a \alert{version control system} (VCS)
+  \item i.e. introduce internals of GIT !
+  \item skipped parts: history rewritting and file storage
+\end{itemize}
 \end{frame}
 
-\begin{frame}{A folder and a bunch of text files}
-% elements
-% - your awesome project folder containing
-% - a bunch of text files (source codes, scripts...)
-% tools
-% - a text editor
-% - a file browser (or a terminal ;-)
-% objectives
-% - backup work periodically
-% - keep track of changes
-% - share your work and keep things synced
+\begin{frame}{A bunch of text files in a folder}
+\framesubtitle{is the start of an \alert{awesome} project}
+
+\twocolumns{%
+  \begin{block}{You have}
+  \begin{itemize}
+    \item<1-> 1 project (= 1 folder)
+    \item<2-> a collection of text files (scripts, notes...)
+  \end{itemize}
+  \end{block}
+
+  \onslide<3->{%
+  \begin{block}{\alert{You want to}}
+  \begin{itemize}
+    \item backup work periodically
+    \item keep track of changes
+    \item share your work and keep things synced
+  \end{itemize}
+  \end{block}%
+  }
+}{%
+  \only<1>{\fig[width=\textwidth]{figs/content_folder.png}}%
+  \only<2-3>{\fig[width=\textwidth]{figs/content_files.png}}%
+  \only<4->{%
+  \begin{block}{You only need}
+  \begin{itemize}
+    \item a text editor
+    \item a file browser (or a terminal ;-)
+  \end{itemize}
+  \end{block}%
+  }%
+}
+
 \end{frame}
 
 \begin{frame}{Keep copies of modified files}
@@ -135,7 +161,7 @@
 
 \begin{frame}
 \begin{center}\huge
-Questions ?
+Questions?
 \end{center}
 \end{frame}
 
