@@ -80,12 +80,29 @@
 
 
 \begin{frame}{Keep copies of the folder: snapshots}
-% "work" folder keeps the working copy
-% copy/backup the whole folder when done
-% add a message: date, author, changes introduced
+\twocolumns{%
+  \begin{itemize}
+    \item<+-> \emph{working} folder keeps the working copy
+    \item<+-> copy the whole folder when done
+    \item<+-> add a message file...
+    \item<+-> ...with date, author and changes introduced
+  \end{itemize}
 
-% keep things synced in backup folders
-% linear view of project history
+  \onslide<5->{%
+  \begin{block}{benefits}
+  \begin{itemize}
+    \item keep things synced in backup folders
+    \item linear view of project history
+  \end{itemize}
+  \end{block}%
+  }
+}{%
+  \only<1>{\fig[width=\textwidth]{figs/snapshots_working.png}}%
+  \only<2>{\fig[width=\textwidth]{figs/snapshots_backup.png}}%
+  \only<3>{\fig[width=\textwidth]{figs/snapshots_files.png}}%
+  \only<4>{\fig[width=\textwidth]{figs/snapshots_message.png}}%
+  \only<5>{\fig[width=\textwidth]{figs/snapshots_history.png}}%
+}
 \end{frame}
 
 
