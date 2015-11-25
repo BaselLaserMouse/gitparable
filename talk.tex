@@ -260,22 +260,21 @@
 
 
 \begin{frame}{Smart storage/access: GIT}
-% same files copied over and over
-
-% GIT put everything in .git
-% deduplicate files
-% compress the whole thing
-
-% cumbersome manipulations
-
-% GIT provide commands:
-% git init, git clone
-% git add, git commit
-% git pull, git push, git merge
-% git diff
-% git log
-% or use a GUI
-\twocolumns{%
+  \twocolumns[0.55]{%
+  \begin{itemize}
+    \item GIT does all this in \emph{.git} folder
+    \item<+-> with compression
+    \item<+-> using dedicated commands%
+    \begin{itemize}
+      \item git clone, git init
+      \item git add, git commit
+      \item git pull, git push
+      \item git merge
+      \item git diff
+      \item git log
+    \end{itemize}
+  \item<+-> or a GUI, e.g \emph{SmartGit}
+  \end{itemize}
 }{%
   \fig[width=\textwidth]{figs/git_folder.png}%
 }
@@ -284,10 +283,12 @@
 
 \begin{frame}{Collaborative plateforms }
 \framesubtitle{Bitbucket, Github, Gitlab...}
-% another collaborator: a central server 
-% central node to sync everyone
-% provides other tools: wiki, ticket systems...
-% usage is not part of this talk ;-)
+\begin{itemize}
+  \item another collaborator: a central server 
+  \item central node to sync everyone
+  \item provides other tools: wiki, ticket systems...
+  \item usage is not part of this talk ;-)
+\end{itemize}
 \end{frame}
 
 
