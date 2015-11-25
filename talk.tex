@@ -23,7 +23,7 @@
   \item describe how to build yourself -- from scratch --\\
         a \alert{version control system} (VCS)
   \item i.e. introduce internals of GIT !
-  \item skipped parts: history rewritting and file storage
+  \item skipped parts: history rewriting and file storage
 \end{itemize}
 \end{frame}
 
@@ -107,14 +107,24 @@
 
 
 \begin{frame}{Fix old versions: branches}
-% copy old backup to "work"
-% fix problem
-% backup with a message
-% add original backup folder name in the message
-
-% just made a branch
-% from linear history to tree
 \twocolumns{%
+  \onslide<2->{%
+  \begin{itemize}
+    \item<2-> copy old backup to \emph{working}
+    \item<3-> fix problem
+    \item<4-> backup with a message
+    \item<5-> add original backup folder name in the message
+  \end{itemize}%
+  }
+
+  \onslide<6>{%
+  \begin{block}{what happened ?}
+  \begin{itemize}
+    \item just made a \alert{branch}
+    \item from linear history to \alert{tree}
+  \end{itemize}
+  \end{block}%
+  }
 }{%
   \only<1>{\fig[width=\textwidth]{figs/fixold_bug.png}}%
   \only<2>{\fig[width=\textwidth]{figs/fixold_copy.png}}%
@@ -127,24 +137,35 @@
 
 
 \begin{frame}{Keep track of branches}
-% different branches for different purpose
-% (fixes, new feature, releases...)
-% add "branches" files for tracking
-% name of last snapshots for each branch
 \twocolumns{%
+  \vspace{2em}
+  \begin{itemize}
+    \item<2-> different branches for different purpose
+          (fixes, new feature, releases...)
+    \item<3-> add \emph{branches} file for tracking
+    \item<4-> name of last snapshot for each branch
+  \end{itemize}%
 }{%
   \only<1>{\fig[width=\textwidth]{figs/branches_folders.png}}%
-  \only<2>{\fig[width=\textwidth]{figs/branches_message.png}}%
+  \only<2-3>{\fig[width=\textwidth]{figs/branches_tree.png}}%
+  \only<4->{\fig[width=\textwidth]{figs/branches_message.png}}%
 }
 \end{frame}
 
 
 \begin{frame}{Record specific events: tags}
-% name specific snapshots
-% ex: version-1.0.1, journal-submission
-% add "tags" file for tracking
-% relates snapshot name to tag name
 \twocolumns{%
+  \vspace{2em}
+  \begin{itemize}
+    \item name specific snapshots
+    \begin{itemize}
+      \item version 1
+      \item journal-submission
+      \item ...
+    \end{itemize}
+    \item add \emph{tags} file for tracking
+    \item<2> relates snapshot name to tag name
+  \end{itemize}%
 }{%
   \only<1>{\fig[width=\textwidth]{figs/tags_folders.png}}%
   \only<2>{\fig[width=\textwidth]{figs/tags_message.png}}%
@@ -153,11 +174,13 @@
 
 
 \begin{frame}{Share your work with someone else}
-% send a copy of everything to your partner !
-% explain how it works
-% partner adding new snapshots and you too...
-% numbering broken when put back together
 \twocolumns{%
+  \vspace{2em}
+  \begin{itemize}
+    \item<2-> send a copy of everything to your partner !
+    \item<3-> partner adding new snapshots and you too...
+    \item<4-> numbering broken when put back together
+  \end{itemize}
 }{%
   \vspace{-1em}
   \only<1>{\fig[width=\textwidth]{figs/share.png}}%
@@ -169,11 +192,14 @@
 
 
 \begin{frame}{Putting things back together: hash names}
-% hash of a file = "unique" string depending on file content
-% replace snapshot names with hash of message files
-% message files are unique = hash names are unique
-% no collision anymore
 \twocolumns{%
+  \vspace{2em}
+  \begin{itemize}
+    \item<+-> hash of a file = ``unique'' string depending on file content
+    \item<+-> replace snapshot names with hash of message files
+    \item<+-> message files are unique = hash names are unique
+    \item<+-> no conflict anymore
+  \end{itemize}
 }{%
   \vspace{-1em}
   \only<1>{\fig[width=\textwidth]{figs/hash_message.png}}%
@@ -185,31 +211,44 @@
 
 
 \begin{frame}{Putting things back together: merging}
-% concurrent changes in 2 snapshots
-% select relevant changes from each
-% create a new snapshot after selection
-% special message with two parent snapshots
-% that's it
 \twocolumns{%
+  \vspace{2em}
+  \begin{itemize}
+    \item<+-> concurrent changes in 2 snapshots
+    \item<+-> select relevant changes from each
+    \item<+-> special message with two parent snapshots
+    \item<+-> that's it
+  \end{itemize}
 }{%
   \vspace{-1em}
   \only<1>{\fig[width=\textwidth]{figs/merge_state.png}}%
   \only<2>{\fig[width=\textwidth]{figs/merge_folders.png}}%
-  \only<3>{\fig[width=\textwidth]{figs/merge_message.png}}%
+  \only<3->{\fig[width=\textwidth]{figs/merge_message.png}}%
 }
 \end{frame}
 
 
 \begin{frame}{Prepare a snapshot: staging area}
-% new folder to prepare snapshots
-% copy their only what's needed for next snapshot
-% decouple work done from logical changes
 \twocolumns{%
+  \vspace{2em}
+  \begin{itemize}
+    \item<+-> new folder to prepare snapshots
+    \item<+-> copy there only what's needed for next snapshot
+    \item<+-> backup from \emph{staging}
+  \end{itemize}
+
+  \onslide<4>{%
+  \begin{block}{benefits}
+    \begin{itemize}
+      \item split work done in logical chunks
+    \end{itemize}
+  \end{block}%
+  }
 }{%
   \vspace{-1em}
   \only<1>{\fig[width=\textwidth]{figs/staging.png}}%
   \only<2>{\fig[width=\textwidth]{figs/staging_add.png}}%
-  \only<3>{\fig[width=\textwidth]{figs/staging_snap.png}}%
+  \only<3->{\fig[width=\textwidth]{figs/staging_snap.png}}%
 }
 \end{frame}
 
