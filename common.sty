@@ -1,0 +1,148 @@
+% Déclarations d'usage ;-)
+%=========================
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{common}[2014/01/20 Extension commune à mes classes]
+
+% Déclaration des options
+%========================
+
+% option pour l'anglais
+\newif\if@english\@englishfalse
+\DeclareOption{english}{
+  \@englishtrue
+}
+
+\ProcessOptions\relax
+
+% Chargement des packages utiles
+%===============================
+
+% pour avoir plus de ressources (nécessaire pour mathtools par exemple)
+\RequirePackage{etex}
+
+% pour gérer plus facilement les imports de dossiers
+\RequirePackage{import}
+
+% font vectorielles
+\RequirePackage{lmodern}
+
+% packages pour l'encodage ...
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+
+% utilisé par babel pour gérer les espaces avec les guillemets
+\RequirePackage{xspace}
+% babel en français (par défaut) et anglais
+\if@english
+  \RequirePackage[frenchb,british]{babel}
+\else
+  \RequirePackage[british,frenchb]{babel}
+\fi
+
+% affichage des urls plus mieux
+\RequirePackage{url}
+% même style que le texte pour les url
+\urlstyle{same}
+
+% pour ne pas avoir de problèmes avec les noms de fichiers avec des points (dot)
+\RequirePackage{grffile}
+% pour l'inclusion d'images
+\RequirePackage{graphicx}
+% pour gérer la taille des flottants
+\RequirePackage{adjustbox}
+
+% pour insérer des pages pdf entières
+\RequirePackage{pdfpages}
+
+% pour avoir de jolis tableaux
+\RequirePackage{booktabs}
+
+% pour ajouter plein de trucs de matheux
+% rq.: mathtools importe amsmath
+\RequirePackage{mathtools}
+\RequirePackage{amssymb}
+\RequirePackage{amsfonts}
+% pour avoir plus de caractères en \mathbb (utiliser \mathbbm)
+\RequirePackage{bbm} 
+
+% package pour mettre en forme les nombres
+\RequirePackage[np]{numprint}
+
+% pour les liens hypertextes
+\RequirePackage{hyperref}
+% liens en noir
+\hypersetup
+{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% pour gérer le retour à la ligne dans des citations bibliographiques longues
+\RequirePackage{breakcites}
+
+% pour la gestion fine de la typographie
+\RequirePackage{microtype}
+
+% pour mettre des "todo"
+\RequirePackage{todonotes}
+
+% pour les algorithmes
+\if@english
+  \RequirePackage[vlined,linesnumbered]{algorithm2e}
+\else
+  \RequirePackage[french,vlined,linesnumbered]{algorithm2e}
+\fi
+% pas de point-virgule à la fin de chaque ligne
+\DontPrintSemicolon
+% pour créer de nouveaux environnements flottants (utile pour les algorithmes)
+\RequirePackage{float,caption}
+
+% pour insérer de longues tables (pour la nomenclature)
+\RequirePackage{longtable}
+
+% Symboles manquants
+%===================
+
+% associer ° avec \degres (issu de babel/frenchb)
+\DeclareUnicodeCharacter{00B0}{\degres}
+
+% symbole euro
+\RequirePackage{eurosym}
+% utilisation du signe euro du clavier
+\DeclareUnicodeCharacter{20AC}{\euro}
+
+% Configurations pour le français
+%================================
+
+% pour babel
+% - pour l'utilisation des guillemets du clavier
+\frenchbsetup{og=«, fg=»}
+% - les tables deviennent des tableaux
+\addto\captionsfrench{\def\tablename{Tableau}}
+
+% Configuration des flottants
+%============================
+
+% configuration de positionnement des flottants
+\newcommand{\floatpos}{tbp}
+
+% macro pour inclure une figure
+\newcommand{\fig}[2][]{\adjustimage{#1,center,figure=\floatpos}{#2}}
+% macro pour inclure une table
+\newcommand{\tab}[2][]{%
+\adjustbox{#1,center,float={table}[\floatpos]}{\input{#2}}}
+% macro pour inclure n'importe quoi
+\newcommand{\incfloat}[2][]{\adjustbox{#1,center,figure=\floatpos}{#2}}
+
+% environnement pour insérer un algorithme facilement dans le flottant défini
+% ci-dessous
+\newenvironment{algorithm2}{\begin{algorithm}[H]}{\end{algorithm}}
+% macro pour insérer un algorithme flottant
+\floatstyle{ruled}
+\newfloat{algo}{\floatpos}{ext}
+\floatname{algo}{\algorithmcfname}
+\newcommand{\incalgo}[2][]{\adjustbox{#1,center,float={algo}[H]}{\input{#2}}}

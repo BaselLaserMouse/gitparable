@@ -1,0 +1,110 @@
+\documentclass[english]{slides}
+\usepackage[english]{common}
+
+\renewcommand{\maketitle}{%
+  \nocount{
+    \frame[plain]{\titlepage}
+  }
+}
+
+\title{The GIT parable}
+\subtitle{Why \texttt{Untitled4copy.v112\_for\_Tom.txt} is NOT fine}
+
+\author{Maxime Rio}
+\date{26th November 2015}
+
+\begin{document}
+\maketitle
+
+\begin{frame}{Where it is coming from}
+% git parable text
+% describe buidling a VCS from scratch
+% explain how GIT does its stuff internally
+% I skip the part about rewriting history
+\end{frame}
+
+\begin{frame}{A folder and a bunch of text files}
+% elements
+% - your awesome project folder containing
+% - a bunch of text files (source codes, scripts...)
+% tools
+% - a text editor
+% - a file browser (or a terminal ;-)
+% objectives
+% - backup work periodically
+% - keep track of changes
+% - share your work and keep things synced
+\end{frame}
+
+\begin{frame}{Keep copies of modified files}
+% keep a backup before modifying
+% really bad idea: other files linked to which version ?
+\end{frame}
+
+\begin{frame}{Keep copies of the folder: snapshots}
+% "work" folder keeps the working copy
+% copy/backup the whole folder when done
+% add a message: date, author, changes introduced
+
+% keep things synced in backup folders
+% linear view of project history
+\end{frame}
+
+\begin{frame}{Fix old versions: branches}
+% copy old backup to "work"
+% fix problem
+% backup with a message
+% add original backup folder name in the message
+
+% just made a branch
+% from linear history to tree
+\end{frame}
+
+\begin{frame}{Keep track of branches}
+% different branches for different purpose
+% (fixes, new feature, releases...)
+% add "branches" files for tracking
+% name of last snapshots for each branch
+\end{frame}
+
+\begin{frame}{Record specific events: tags}
+% name specific snapshots
+% ex: version-1.0.1, journal-submission
+% add "tags" file for tracking
+% relates snapshot name to tag name
+\end{frame}
+
+\begin{frame}{Share your work with someone else}
+% send a copy of everything to your partner !
+% explain how it works
+% partner adding new snapshots and you too...
+% numbering broken when put back together
+\end{frame}
+
+\begin{frame}{Putting things back together: hash names}
+% hash of a file = "unique" string depending on file content
+% replace snapshot names with hash of message files
+% message files are unique = hash names are unique
+% no collision anymore
+\end{frame}
+
+\begin{frame}{Putting things back together: merging}
+% concurrent changes in 2 snapshots
+% select relevant changes from each
+% create a new snaphost after selection
+% special message with two parent snapshots
+% that's it
+\end{frame}
+
+\begin{frame}{Prepare a snapshot: staging area}
+% new folder to prepare snapshots
+% copy their only what's needed for next snapshot
+% decouple work done from logical changes
+\end{frame}
+
+\begin{frame}{Comparing snapshots: diffs}
+% quick look at differences
+% help knowing what is not yet in staging folder
+\end{frame}
+
+\end{document}
