@@ -27,9 +27,9 @@
 \end{itemize}
 \end{frame}
 
+
 \begin{frame}{A bunch of text files in a folder}
 \framesubtitle{is the start of an \alert{awesome} project}
-
 \twocolumns{%
   \begin{block}{You have}
   \begin{itemize}
@@ -59,13 +59,25 @@
   \end{block}%
   }%
 }
-
 \end{frame}
+
 
 \begin{frame}{Keep copies of modified files}
-% keep a backup before modifying
-% really bad idea: other files linked to which version ?
+\twocolumns{
+  \begin{itemize}
+    \item<+-> keep a backup before modifying a file
+    \item<+-> and do it again
+    \item<+-> and which versions work together ?
+    \item<+-> \alert{\Large bad bad bad idea}
+  \end{itemize}
+}{%
+  \only<1>{\fig[width=\textwidth]{figs/backup_warr.png}}%
+  \only<2>{\fig[width=\textwidth]{figs/backup_warr2.png}}%
+  \only<3>{\fig[width=\textwidth]{figs/backup_conflict.png}}%
+  \only<4->{\fig[width=\textwidth]{figs/backup_bad.png}}%
+}
 \end{frame}
+
 
 \begin{frame}{Keep copies of the folder: snapshots}
 % "work" folder keeps the working copy
@@ -75,6 +87,7 @@
 % keep things synced in backup folders
 % linear view of project history
 \end{frame}
+
 
 \begin{frame}{Fix old versions: branches}
 % copy old backup to "work"
@@ -86,12 +99,14 @@
 % from linear history to tree
 \end{frame}
 
+
 \begin{frame}{Keep track of branches}
 % different branches for different purpose
 % (fixes, new feature, releases...)
 % add "branches" files for tracking
 % name of last snapshots for each branch
 \end{frame}
+
 
 \begin{frame}{Record specific events: tags}
 % name specific snapshots
@@ -100,6 +115,7 @@
 % relates snapshot name to tag name
 \end{frame}
 
+
 \begin{frame}{Share your work with someone else}
 % send a copy of everything to your partner !
 % explain how it works
@@ -107,12 +123,14 @@
 % numbering broken when put back together
 \end{frame}
 
+
 \begin{frame}{Putting things back together: hash names}
 % hash of a file = "unique" string depending on file content
 % replace snapshot names with hash of message files
 % message files are unique = hash names are unique
 % no collision anymore
 \end{frame}
+
 
 \begin{frame}{Putting things back together: merging}
 % concurrent changes in 2 snapshots
@@ -122,16 +140,19 @@
 % that's it
 \end{frame}
 
+
 \begin{frame}{Prepare a snapshot: staging area}
 % new folder to prepare snapshots
 % copy their only what's needed for next snapshot
 % decouple work done from logical changes
 \end{frame}
 
+
 \begin{frame}{Comparing snapshots: diffs}
 % quick look at differences
 % help knowing what is not yet in staging folder
 \end{frame}
+
 
 \begin{frame}{Smart storage/access: GIT}
 % same files copied over and over
@@ -151,6 +172,7 @@
 % or use a GUI
 \end{frame}
 
+
 \begin{frame}{Collaborative plateforms }
 \framesubtitle{Bitbucket, Github, Gitlab...}
 % another collaborator: a central server 
@@ -158,6 +180,7 @@
 % provides other tools: wiki, ticket systems...
 % usage is not part of this talk ;-)
 \end{frame}
+
 
 \begin{frame}
 \begin{center}\huge
