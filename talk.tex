@@ -20,7 +20,7 @@
 % git parable text
 % describe buidling a VCS from scratch
 % explain how GIT does its stuff internally
-% I skip the part about rewriting history
+% I skip the part about rewriting history and file storage
 \end{frame}
 
 \begin{frame}{A folder and a bunch of text files}
@@ -105,6 +105,16 @@
 \begin{frame}{Comparing snapshots: diffs}
 % quick look at differences
 % help knowing what is not yet in staging folder
+\end{frame}
+
+\begin{frame}{Deduplicate everything}
+% same files copied over and over
+
+% keep all files and directories in "object"
+% rename them with their hash
+% keep the hash of the root directory in the message
+
+% bonus: compress the whole thing
 \end{frame}
 
 \end{document}
